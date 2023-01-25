@@ -4,6 +4,15 @@
 
 const convertToBase2 = element => {
   // Your code here
+  let binaryString;
+  if (typeof element === 'string') { // hexidecimal
+    let base10 = parseInt(element, 16)
+    binaryString = base10.toString(2);
+  }
+  else { // decimal
+    binaryString = element.toString(2);
+  }
+  return `0b${binaryString}`
 };
 
 /******************************************************************************/

@@ -3,6 +3,17 @@
 /******************************************************************************/
 
 const convertToBase16 = element => {
+  let hexidecimalString;
+  if (typeof element === 'string') { //binary
+    if (element.startsWith('0b')) {
+      element = element.substr(2, element.length - 1); //element.substring(2);
+    }
+    let decimalNum = parseInt(element, 2);
+    hexidecimalString = decimalNum.toString(16)
+  } else { // decimal
+    hexidecimalString = element.toString(16)
+  }
+  return `0x${hexidecimalString}`
   // Your code here
 };
 
